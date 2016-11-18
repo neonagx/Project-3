@@ -8,8 +8,6 @@ CREATED BY
 **Gaye Lowenstein**
 </center>
 
-
-
 ###DESCRIPTION
 __MovieFindr__ is a place to search multiple databases at once to find where a movie is being streamed online.
 
@@ -43,6 +41,7 @@ _Wire Frames_
 * __AJAX__ - client side script that communicates with a server/database (Express/MongoDB)
 * __EJS__ - client-side templating language to generate HTML with JavaScript
 * __Express__ - server side framework to organize our app into MVC architecture
+* __GuideBox__ - 3rd party API
 * __JavaScript__ - object-oriented computer programming language
 * __MongoDB__ - platform to build our database
 * __Node.JS__ - platform to run our Javascript application
