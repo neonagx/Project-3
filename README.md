@@ -8,6 +8,7 @@ CREATED BY
 **Gaye Lowenstein**
 </center>
 
+
 ###DESCRIPTION
 __MovieFindr__ is a place to search multiple databases at once to find where a movie is being streamed online.
 
