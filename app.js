@@ -15,7 +15,7 @@ require('dotenv').load()
 var app = express()
 
 //connect to the MongoDB with mongoose
-require('./config/database')
+// require('./config/database')
 require('./config/passport')
 
 //require routes
