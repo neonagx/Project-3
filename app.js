@@ -15,7 +15,7 @@ require('dotenv').load()
 var app = express()
 
 //connect to the MongoDB with mongoose
-// require('./config/database')
+require('./config/database')
 require('./config/passport')
 
 //require routes
@@ -42,7 +42,6 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', index)
 app.use('/users', users)
 
 // catch 404 and forward to error handler
