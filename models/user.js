@@ -2,8 +2,7 @@ var mongoose = require('mongoose')
 
 var UserSchema = new mongoose.Schema({
   userName: String,
-  email: String,
-  googleId: String
+  movies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movie'}]
 })
 
 UserSchema.methods.sayHello = function(){

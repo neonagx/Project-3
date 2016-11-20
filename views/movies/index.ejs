@@ -2,17 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Movie List</title>
+    <title>Movie App</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
   </head>
 
   <body>
     <h1>
-      <a target="_blank" href="#">Movie Thumbnail</a>
+      <a target="_blank" href="https://api.guidebox.com/">GuideBox</a>
     </h1>
     <div class="container">
-    <% for(var i=0; i< movies.length; i++) {  %>
+    <% for(var i=0; i< movies.length; i++) { %>
       <ul>
         <li><b>Title : </b> <%= movies[i].title %></li>
         <li><b>Genre : </b> <%= movies[i].genre %></li>
@@ -20,3 +20,4 @@
     <% } %>
     </div>
   </body>
+</html>
