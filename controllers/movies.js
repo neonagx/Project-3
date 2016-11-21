@@ -6,3 +6,7 @@ function index(req, res, next){
     res.json(movies)
   })
 }
+
+module.exports = {
+  index: index
+}
