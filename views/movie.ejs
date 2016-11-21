@@ -5,6 +5,12 @@
     <title>Movie List</title>
   </head>
   <body>
-
+    <% for(var i = 0; i < movies.length; i++) %>
+    <h1><%= movies[i].title %></h1>
+    <ul>
+      <li>Genre: <%= movies[i].genre %></li>
+      <li>Provider: <%= movies[i].provider %></li>
+      <li>Watched: <%= movies[i].watched %></li>
+    </ul>
   </body>
 </html>

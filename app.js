@@ -44,7 +44,7 @@ app.use(passport.session())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', user)
-app.use('/api/movie', movie)
+app.use('/movies', movie)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
