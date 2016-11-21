@@ -1,9 +1,26 @@
-var express = require('express');
-var router = express.Router();
+var router = require('express').Router()
+var passport = require('passport')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/', function(req, res) {
+  res.render('index', {user: req.user});
 });
 
-module.exports = router;
+router.get('/auth/google', passport.authenticate(
+  'google',
+  { scope: ['profile', 'email'] }
+));
+
+router.get('/oauth2callback', passport.authenticate(
+  'google',
+  {
+    successRedirect : '/',
+    failureRedirect : '/'
+  }
+));
+
+router.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
+module.exports = router
