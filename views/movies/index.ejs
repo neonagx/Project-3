@@ -1,5 +1,51 @@
 <!DOCTYPE html>
 <html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Movies, Inc.</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    </head>
+    <body>
+
+      <div class="container">
+        <div class="page-header">
+        <h1><a href="/movies">Movies, Inc.</a></h1>
+        <h6>Movie List</h6>
+      </div>
+
+        <ul id="movies">
+
+        <% movies.forEach(function(movie) { %>
+          <li>
+            <blockmovie>
+              <p><%= movie.title %></p>
+              <footer><%= movie.genre %></footer>
+            </blockmovie>
+          </li>
+        <% }); %>
+
+        </ul>
+
+        <nav>
+          <a href="/movies/new">Add A New Movie</a>
+        </nav>
+
+  
+
+      </div>
+
+
+
+    </body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
     <title>Movie App</title>
@@ -18,9 +64,25 @@
         <li><b>Genre : </b> <%= movies[i].genre %></li>
         <li><b>Provider : </b> <%= movies[i].provider %></li>
         <li><b>Watched : </b> <%= movies[i].watched %></li>
+
+    <form action="/movies" method="post">
+      <div class='form-group'>
+        <input type="text" name="movie[text]" placeholder="This is a movie..." class="form-control" >
+      </div>
+      <div class='form-group'>
+        <input type="text" name="movie[author]" placeholder="Maxwell P. Strong" class="form-control" >
+      </div>
+      <div class='form-group'>
+        <input type="submit" value='Save Movie' class="btn btn-default">
       </ul>
     <% } %>
     </div>
-    <script></script>
+
+      </div>
+    </form>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+<script src="javascripts/app.js"></script>
   </body>
-</html>
+</html> -->

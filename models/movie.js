@@ -8,7 +8,6 @@ var MovieSchema = new mongoose.Schema({
   // users: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 })
 
-
 var Movie = mongoose.model('Movie', MovieSchema)
 
 //make available to our other files

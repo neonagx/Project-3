@@ -6,9 +6,8 @@ var usersController = require('../controllers/users');
 var moviesController = require('../controllers/movies');
 
 // root path:
-router.get('/', function(req, res) {
-  res.send('<h1>This works</h1>')
-});
+router.get('/', moviesController.index);
+
 
 router.get('/movies', moviesController.index);
 router.post('/movies', moviesController.create);
