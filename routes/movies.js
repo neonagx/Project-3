@@ -1,11 +1,18 @@
 var express = require('express')
 var router = express.Router()
-var moviesController = require('../controllers/movies')
+var moviesCtrl = require('../controllers/movies')
 
-router.get('/', moviesController.index)
+router.route('/')
+  .get(moviesCtrl.index)
+  .post(moviesCtrl.create)
 
 router.route('/new')
-  .get(moviesController.newMovie)
+  .get(moviesCtrl.newMovie)
+
+router.route('/:id') 
+  .get(moviesCtrl.showMovie)
+  .patch(moviesCtrl.updateMovie)
+  .delete(moviesCtrl.destroyMovie)
 
 
 module.exports = router
