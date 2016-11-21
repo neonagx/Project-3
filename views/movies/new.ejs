@@ -14,10 +14,13 @@
 
         <form action="/movies" method="post">
           <div class='form-group'>
-            <input type="text" name="movie[text]" placeholder="This is a movie..." class="form-control" >
+            <input type="text" name="movie[title]" placeholder="This is a movie..." class="form-control" >
           </div>
           <div class='form-group'>
-            <input type="text" name="movie[author]" placeholder="Maxwell P. Strong" class="form-control" >
+            <input type="text" name="movie[genre]" placeholder="Comedy" class="form-control" >
+          </div>
+          <div class='form-group'>
+            <input type="text" name="movie[provider]" placeholder="Netflix" class="form-control" >
           </div>
           <div class='form-group'>
             <input type="submit" value='Save Movie' class="btn btn-default">
