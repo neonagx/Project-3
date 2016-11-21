@@ -14,13 +14,14 @@ require('dotenv').load()
 //create the Express app
 var app = express()
 
-//connect to the MongoDB with mongoose
+//connect to the MongoDB with mongoose and passport
 require('./config/database')
 require('./config/passport')
 
 //require routes
 var index = require('./routes/index')
-var users = require('./routes/users')
+var user = require('./routes/user')
+var movie = require('./routes/movie')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
