@@ -6,7 +6,7 @@ var dbUri = process.env.MONGODB_URI ||
 if (!process.env.MONGODB_URI) {
 
   require('net').connect(27017, 'localhost').on('error', function() {
-    console.log("You are here");
+    console.log("YOU MUST START MONGOD");
     process.exit(0);
   });
 }
