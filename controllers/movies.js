@@ -24,8 +24,8 @@ function create(req, res, next) {
     if(err) {
       res.send(err)
     }
-    console.log("What a movie!")
-    res.json(savedMovie)
+    console.log("create movie!")
+    res.render('movies/create')
   })
 };
 
