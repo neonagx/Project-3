@@ -13,8 +13,12 @@ var port = process.env.PORT || 3000
 // app.get('/', function(req, res){
 //   res.send('Welcome to Your MovieFindr')
 // })
+app.post('/movies', function(req, res){
+  console.log(req.body)
+  res.status(200)
+})
 
-app.listen(port, function(){
+var server = app.listen(port, function(){
   console.log('Server listening on port', port)
 })
 

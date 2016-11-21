@@ -3,8 +3,9 @@ var mongoose = require('mongoose')
 var MovieSchema = new mongoose.Schema({
   title: String,
   genre: String,
+  provider: String,
   watched: Boolean,
-  users: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
+  // users: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 })
 
 

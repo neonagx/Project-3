@@ -3,16 +3,19 @@ var movies = [
   {
     title: "Star Wars",
     genre: "SciFi",
+    provider: ["Amazon Prime", "Netflix", "Hulu Plus"],
     watched: true
   },
   {
     title: "The Hangover",
     genre: "Comedy",
+    provider: ["Amazon Prime", "Netflix", "Hulu Plus"],
     watched: true
   },
   {
-    title: "To Sir With Love",
+    title: "Close Encounters",
     genre: "Classic",
+    provider: ["Amazon Prime", "Netflix", "Hulu Plus"],
     watched: false
   },
 ]
