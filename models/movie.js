@@ -4,7 +4,7 @@ var MovieSchema = new mongoose.Schema({
   title: String,
   genre: String,
   provider: String,
-  watched: Boolean,
+  watched: Boolean
   // users: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 })
 
