@@ -14,18 +14,18 @@ function newMovie(req, res, next) {
 }
 
 function create(req, res, next) {
-  var movie = new Movie()
+  var movie = new Movie({})
   movie.title = req.body.title
   movie.genre = req.body.genre
   movie.provider = req.body.provider
   movie.watched = req.body.watched
 
-  movie.save(function(err, savedMovie){
+  movie.save(function(err){
     if(err) {
       res.send(err)
     }
     console.log("What a movie!")
-    res.json(savedMovie)
+    res.redirect('movies/index')
   })
 };
 
@@ -57,7 +57,7 @@ function update(req, res) {
         res.send(err)
       }
       console.log("updated movie")
-      res.json(updatedMovie)
+      res.render('movies/update')
     })
   })
 }
