@@ -12,6 +12,8 @@ if (!process.env.MONGODB_URI) {
   });
 }
 
-mongoose.connect(dbUri);
+mongoose.connect(dbUri, function() {
+  console.log("connected to:", dbUri)
+});
 
 module.exports = mongoose;
