@@ -14,18 +14,12 @@ function newMovie(req, res, next) {
 }
 
 function create(req, res, next) {
-  var movie = new Movie({})
-  movie.title = req.body.title
-  movie.genre = req.body.genre
-  movie.provider = req.body.provider
-  movie.watched = req.body.watched
+  var movie = new Movie(req.body)
+	console.log(req.body)
+  movie.save(function(err, savedMovie){
+    if(err) next(err)
 
-  movie.save(function(err){
-    if(err) {
-      res.send(err)
-    }
-    console.log("What a movie!")
-    res.redirect('movies/index')
+    res.redirect('/movies')
   })
 };
 
