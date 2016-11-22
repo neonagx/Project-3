@@ -45,15 +45,15 @@ function update(req, res) {
     }
     if(req.body.title) movie.title = req.body.title
     if(req.body.genre) movie.genre = req.body.genre
-    if(req.body.provider) movie.provider = req.body.provider
-    if(req.body.watched) movie.watched = req.body.watched
+		if(req.body.provider) movie.provider = req.body.provider
+		if(req.body.watched) movie.watched = req.body.watched
 
     movie.save(function(err, updatedMovie){
       if(err) {
         res.send(err)
       }
       console.log("updated movie")
-      res.render('movies/update')
+      res.redirect('/movies')
     })
   })
 }

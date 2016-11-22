@@ -15,16 +15,23 @@
         <h6>Movie List</h6>
       </div>
 
-        <ul id="movies">
+        <ul id="watched">
 
         <% movies.forEach(function(movie) { %>
-          <li>
-            <blockmovie>
-              <p><%= movie.title %></p>
-              <footer><%= movie.genre %></footer>
-            </blockmovie>
-          </li>
+          <li><%= movie.title %></li>
+          <li><%= movie.genre %></li>
+          <li><%= movie.provider %></li>
+          <li><%= movie.watched %></li>
+        <% }); %>
 
+        </ul>
+        <ul id="not watched">
+
+        <% movies.forEach(function(movie) { %>
+          <li><%= movie.title %></li>
+          <li><%= movie.genre %></li>
+          <li><%= movie.provider %></li>
+          <li><%= movie.watched %></li>
         <% }); %>
 
         </ul>

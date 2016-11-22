@@ -4,15 +4,14 @@ var moviesCtrl = require('../controllers/movies')
 
 router.route('/')
   .get(moviesCtrl.index)
-  .post(moviesCtrl.create)
-
 router.route('/new')
   .get(moviesCtrl.newMovie)
-
-router.route('/:id') 
+router.route('/api/movies')
+  .get(moviesCtrl.index)
+  .post(moviesCtrl.create)
+router.route('/api/movies/:id')
   .get(moviesCtrl.showMovie)
   .patch(moviesCtrl.updateMovie)
   .delete(moviesCtrl.destroyMovie)
-
 
 module.exports = router
