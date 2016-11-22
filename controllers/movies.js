@@ -1,4 +1,5 @@
 var Movie = require('../models/movie')
+var request = require('request')
 
 function index(req, res, next) {
 	Movie.find({}, function(err, movies){
@@ -59,11 +60,23 @@ function destroy(req, res, next) {
   })
 }
 
+function searchApi(req, res, next) {
+	var searchString = `https://api-public.guidebox.com/v1.43/US/T1srQMKdGpmfuqtp0ciZ7Wfqb82FXc/search/movie/title/${req.params.query}`
+	  request(searchString, function(err, response, body) {
+			// for (var i = 0; i < 5, i++)
+      // var imageSource = JSON.parse(body).results[i].poster_120x171
+      // var title = JSON.parse(body).results[i].title
+	    // res.send(`<img src="${imageSource}"> <h2>${title}</h2>`)
+			res.json(JSON.parse(body))
+	  })
+}
+
 module.exports = {
 	movieApi: movieApi,
   index: index,
   create: create,
   showMovie: show,
   updateMovie: update,
-  destroyMovie: destroy
+  destroyMovie: destroy,
+	searchApi: searchApi
 }
