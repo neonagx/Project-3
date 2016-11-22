@@ -36,13 +36,13 @@ $(document).ready(function(){
       $('#movie-watched').val('')
 
       var movieHTML = createMovieHTML(jsonMovie)
-      $('#watched').append(movieHTML)
+      $('#not-watched').append(movieHTML)
     })
   })
 
   function createMovieHTML(jsonMovie){
     console.log(jsonMovie)
-    return $(`<li>${jsonMovie.title}</li><li>${jsonMovie.genre}<li>${jsonMovie.watched ? "checked" : ""}</li><li>${jsonMovie.provider}`)
+    return $(`<li>${jsonMovie.title}</li><li>${jsonMovie.genre}</li><li>${jsonMovie.provider}</li><input type="checkbox" ${jsonMovie.watched ? "checked" : ""}/><button class="remove-item">X</span></button>`)
   }
 
   function updateHandler(e){
@@ -51,7 +51,7 @@ $(document).ready(function(){
 
     $.ajax({
       type: "PATCH",
-      url: "/api/movies/" + encodeURIComponent(id),
+      url: "movies/api/movies/" + encodeURIComponent(id),
       data: {}
     }).done(function(jsonMovie){
       html.remove()
@@ -70,14 +70,14 @@ $(document).ready(function(){
 
     $.ajax({
       type: "DELETE",
-      url: "/api/movies/" + encodeURIComponent(id),
+      url: "movies/api/movies/" + encodeURIComponent(id),
     }).done(function(data){
       html.remove()
       console.log(data.message)
     })
   }
-  $('#personal-movie').on('click', ':checkbox', updateHandler)
-  $('#bootsy-movie').on('click', ':checkbox', updateHandler)
-  $('#personal-movie').on('click', '.remove-item', deleteHandler)
-  $('#bootsy-movie').on('click', '.remove-item', deleteHandler)
+  $('#watched').on('click', ':checkbox', updateHandler)
+  $('#not-watched').on('click', ':checkbox', updateHandler)
+  $('#watched').on('click', '.remove-item', deleteHandler)
+  $('#not-watched').on('click', '.remove-item', deleteHandler)
 })
