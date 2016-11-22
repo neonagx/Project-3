@@ -1,58 +1,81 @@
-var allMovies;
-var filteredMovies = [];
-var searchName = '';
-var template;
+console.log('app.js loaded');
 
-$(function() {
-  // load all movies one time at load
-  $.get('/api/movies', function(data) {
-    allMovies = data;
-    template = _.template($('#movieTemplate').html());
-    render();
-  });
-});
+$(document).ready(function(){
+  // $.ajax({
+  //   type: "GET",
+  //   url: "/api/todos"
+  // }).done(function(data){
+    //Iterate through our array of json todos
+    $.get('/api/todos').done(function(data){
+    data.forEach(function(jsonTodo){
+      var todoHTML = createTodoHTML(jsonTodo)
 
-function render() {
-  applyFilterAndSort();
-  $('#movies').html(template({movies: filteredMovies}));
-}
+      if(jsonTodo.completed) {
+        $('#personal-todo').append(todoHTML)
+      } else {
+        $('#bootsy-todo').append(todoHTML)
+      }
+    })
+  })
+  // Attach Listener on form button to perform AJAX post of new todo
+  $('#new-todo').on('submit', function(e){
+    //stop the default behavior from clicking on the submit button
+    e.preventDefault()
 
-function applyFilterAndSort() {
-  if (searchName) {
-    filteredMovies = allMovies.filter(function(movie) {
-      return movie.name.toLowerCase().indexOf(searchName.toLowerCase()) >= 0;
-    });
-  } else {
-    filteredMovies = allMovies;
-  }
-  var sortKey = $('#sortCohort').is(":checked") ? 'cohort' : 'name';
-  filteredMovies = _.sortBy(filteredMovies, sortKey);
-}
-
-function doSearch() {
-  var curSearch = $('#search').val();
-  if (curSearch != searchName) searchName = curSearch;
-  render();
-}
-
-function addFact() {
-  $.post(
-    '/api/facts',
-    { fact: $('#fact').val() }).done(function(data) {
-      $('#fact').val('');
-      var updated = allMovies.find(function(movie) {
-        return movie._id === data._id;
-      });
-      updated.facts.push(data.facts.pop());
-      render();
+    //Create object representing new todo to be added
+    var newTodo = {
+      task: $('#todo-task').val(),
+      bootsyLevel: $('#todo-bootsy-level').val()
     }
-  );
-}
 
-/* ----- event handlers ----- */
+    $.post('/api/todos', newTodo).done(function(jsonTodo){
+      //Clear the form
+      $('#todo-task').val('')
+      $('#todo-bootsy-level').val('')
 
-$('#search').on('keypress blur', function(evt) {
-  if (evt.keyCode === 13 || evt.type === 'blur') doSearch();
-});
+      var todoHTML = createTodoHTML(jsonTodo)
+      $('#bootsy-todo').append(todoHTML)
+    })
+  })
 
-$('[type="radio"]').on('change', function() { render(); });
+  function createTodoHTML(jsonTodo){
+    return $(`<li id="todo-${jsonTodo._id}"class="todo-item bootsy${jsonTodo.bootsyLevel}">${jsonTodo.task}
+    <input type="checkbox" name="todo[completed]" ${jsonTodo.completed ? "checked" : ""}/><span class="remove-item">X</span></li>"`)
+  }
+
+  function updateHandler(e){
+    var html = $(this).parent()
+    var id = html.attr('id').slice(5)
+
+    $.ajax({
+      type: "PATCH",
+      url: "/api/todos/" + encodeURIComponent(id),
+      data: {}
+    }).done(function(jsonTodo){
+      html.remove()
+      var todoHTML = createTodoHTML(jsonTodo)
+      if(jsonTodo.completed) {
+        $('#personal-todo').append(todoHTML)
+      } else {
+        $('#bootsy-todo').append(todoHTML)
+      }
+    })
+  }
+
+  function deleteHandler(e){
+    var html = $(this).parent()
+    var id = html.attr('id').slice(5)
+
+    $.ajax({
+      type: "DELETE",
+      url: "/api/todos/" + encodeURIComponent(id),
+    }).done(function(data){
+      html.remove()
+      console.log(data.message)
+    })
+  }
+  $('#personal-todo').on('click', ':checkbox', updateHandler)
+  $('#bootsy-todo').on('click', ':checkbox', updateHandler)
+  $('#personal-todo').on('click', '.remove-item', deleteHandler)
+  $('#bootsy-todo').on('click', '.remove-item', deleteHandler)
+})
