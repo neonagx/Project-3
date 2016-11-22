@@ -17,14 +17,13 @@ function movieApi(req, res, next) {
 function create(req, res, next) {
   var movie = new Movie(req.body)
 
-
   movie.save(function(err, savedMovie){
     if(err) {
     res.send(err)
     }
 		res.json(savedMovie)
   })
-};
+}
 
 function show(req, res, next) {
   var id = req.params.id
