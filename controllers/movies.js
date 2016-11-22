@@ -16,9 +16,14 @@ function movieApi(req, res, next) {
 function create(req, res, next) {
   var movie = new Movie(req.body)
 
-  movie.save(function(err, savedMovie){
-    if(err) next(err)
-		res.json(savedMovie)
+
+  movie.save(function(err){
+    if(err) {
+    res.send(err)
+    }
+
+    console.log("What a movie!")
+    res.redirect('/movies')
   })
 };
 
