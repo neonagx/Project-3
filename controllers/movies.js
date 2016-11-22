@@ -17,13 +17,11 @@ function create(req, res, next) {
   var movie = new Movie(req.body)
 
 
-  movie.save(function(err){
+  movie.save(function(err, savedMovie){
     if(err) {
     res.send(err)
     }
-
-    console.log("What a movie!")
-    res.redirect('/movies')
+		res.json(savedMovie)
   })
 };
 
