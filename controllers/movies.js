@@ -44,7 +44,7 @@ function update(req, res, next) {
     movie.save(function(err, updatedMovie){
       if(err) next(err)
       console.log("updated movie")
-      res.redirect('/movies')
+			res.json(updatedMovie)
     })
   })
 }
