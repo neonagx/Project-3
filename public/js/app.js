@@ -3,8 +3,8 @@ console.log('app.js loaded');
 $(document).ready(function(){
 
   function createMovieHTML(jsonMovie){
-    console.log(jsonMovie)
-    return $(`<li id="movie-${jsonMovie._id}">Title:${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br>Provider: ${jsonMovie.provider}<br>Watched?<input type="checkbox" ${jsonMovie.watched ? "checked" : ""}/><br><button class="remove-item">X</span></button></li>`)
+    console.log(jsonMovie._id)
+    return $(`<li id="movie-${jsonMovie._id}">Title:${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br>Provider: ${jsonMovie.provider}<br><input type="checkbox" id=${jsonMovie._id} ${jsonMovie.watched ? "checked" : ""}/><label for=${jsonMovie._id}>Watched</label><br><button class="remove-item">X</span></button></li>`)
   }
 
   $.ajax({
@@ -49,7 +49,7 @@ $(document).ready(function(){
   function updateHandler(e){
     var html = $(this).parent()
     var id = html.attr('id').slice(6)
-
+    console.log(id)
     $.ajax({
       type: "PATCH",
       url: "movies/api/movies/" + encodeURIComponent(id),
