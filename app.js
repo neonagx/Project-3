@@ -25,6 +25,7 @@ var movies = require('./routes/movies')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.set('view engine', 'ejs')
 
 // uncomment after placing your favicon in /public
@@ -40,7 +41,6 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', users)
 app.use('/movies', movies)

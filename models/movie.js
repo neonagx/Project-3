@@ -5,7 +5,6 @@ var MovieSchema = new mongoose.Schema({
   genre: String,
   provider: String,
   watched: Boolean
-  // users: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 })
 
 var Movie = mongoose.model('Movie', MovieSchema)
