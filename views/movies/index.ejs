@@ -10,7 +10,6 @@
           <a href="/logout" class="brand-logo">Logout</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="#"></a></li>
-
           </ul>
         </div>
       </nav>
@@ -51,6 +50,23 @@
               <ul id="not-watched">
               </ul>
             </article>
+            <% } else { %>
+              <div class="navbar-fixed">
+                <nav>
+                  <div class="nav-wrapper">
+                    <a href="" class="brand-logo left">Movie Findr</a>
+                    <ul class="right">
+                      <% if (user) { %>
+                        <li><a href="/logout">Logout</a></li>
+                      <% } else { %>
+                        <li><a href="/auth/google">Login with Google</a></li>
+                      <% } %>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+              <h4>Please login to enter MovieFindr!</h4>
+            <% } %>
         </div>
       </div>
     </body>
