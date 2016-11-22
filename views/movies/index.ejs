@@ -4,6 +4,7 @@
     <%- include('../partials/head')  %>
     </head>
     <body>
+      <% if(user){ %>
       <nav>
         <div class="nav-wrapper">
           <a href="/logout" class="brand-logo">Logout</a>
@@ -50,12 +51,7 @@
               <ul id="not-watched">
               </ul>
             </article>
-          <!-- <p>
-          <input type="checkbox" class="watched" id="filled-in-box" checked="checked" />
-          <label for="filled-in-box">Watched?</label>
-          </p> -->
         </div>
       </div>
-
     </body>
 </html>

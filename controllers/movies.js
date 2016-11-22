@@ -1,9 +1,10 @@
 var Movie = require('../models/movie')
+var authenticate = require('./authenticate')
 
 function index(req, res, next) {
 	Movie.find({}, function(err, movies){
 		if (err) next(err)
-		res.render('movies/index', {movies: movies})
+		res.render('movies/index', {movies: movies, user: req.user})
 	})
 }
 
