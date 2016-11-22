@@ -4,12 +4,13 @@
     <%- include('../partials/head')  %>
     </head>
     <body>
+      <% if(user){ %>
       <nav>
         <div class="nav-wrapper">
           <a href="/logout" class="brand-logo">Logout</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="#"></a></li>
-            
+
           </ul>
         </div>
       </nav>
@@ -48,5 +49,6 @@
             <ul id="not-watched">
             </ul>
           </article>
+          <% } %>
     </body>
 </html>
