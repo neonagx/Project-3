@@ -9,7 +9,7 @@
           <a href="/logout" class="brand-logo">Logout</a>
           <ul class="right hide-on-med-and-down">
             <li><a href="#"></a></li>
-            
+
           </ul>
         </div>
       </nav>
@@ -35,18 +35,27 @@
           </div>
         </form>
       </div>
-      <div class="one-half column">
-        <h4 class="custom-font">Watched</h4>
+
+      <div class="one-half column slideThree">
+        <input type="checkbox" value="None" id="slideThree" name="check"/>
+        <h4 class="custom-font checkbox">Watched</h4>
           <article class="choices todos-column">
             <ul id="watched">
             </ul>
           </article>
+
+        <div class="one-half column slideThree">
+          <h4 class="custom-font checkbox">Not Watched</h4>
+            <article class="choices todos-column">
+              <ul id="not-watched">
+              </ul>
+            </article>
+          <!-- <p>
+          <input type="checkbox" class="watched" id="filled-in-box" checked="checked" />
+          <label for="filled-in-box">Watched?</label>
+          </p> -->
+        </div>
       </div>
-      <div class="one-half column">
-        <h4 class="custom-font">Not Watched</h4>
-          <article class="choices todos-column">
-            <ul id="not-watched">
-            </ul>
-          </article>
+
     </body>
 </html>
