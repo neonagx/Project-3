@@ -1,46 +1,51 @@
 console.log('app.js loaded');
 
 $(document).ready(function(){
-  // $.ajax({
-  //   type: "GET",
-  //   url: "/api/todos"
-  // }).done(function(data){
-    //Iterate through our array of json todos
-    $.get('/api/todos').done(function(data){
-    data.forEach(function(jsonTodo){
-      var todoHTML = createTodoHTML(jsonTodo)
+  $.ajax({
+    type: "GET",
+    url: "/movies/api/movies"
+  }).done(function(jsonMovies){
+    jsonMovies.forEach(function(jsonMovie){
+      console.log(jsonMovie)
+      var movieHTML = createMovieHTML(jsonMovie)
 
-      if(jsonTodo.completed) {
-        $('#personal-todo').append(todoHTML)
+      if(jsonMovie.watched) {
+        $('#watched').append(movieHTML)
       } else {
-        $('#bootsy-todo').append(todoHTML)
+        $('#not-watched').append(movieHTML)
       }
     })
   })
-  // Attach Listener on form button to perform AJAX post of new todo
-  $('#new-todo').on('submit', function(e){
+  // Attach Listener on form button to perform AJAX post of new movie
+  $('#new-movie').on('submit', function(e){
     //stop the default behavior from clicking on the submit button
     e.preventDefault()
 
-    //Create object representing new todo to be added
-    var newTodo = {
-      task: $('#todo-task').val(),
-      bootsyLevel: $('#todo-bootsy-level').val()
+    //Create object representing new movie to be added
+    var newMovie = {
+      title: $('#movie-title').val(),
+      genre: $('#movie-genre').val(),
+      provider: $('#movie-provider').val(),
+      watched: $('#movie-watched').val()
     }
 
-    $.post('/api/todos', newTodo).done(function(jsonTodo){
-      //Clear the form
-      $('#todo-task').val('')
-      $('#todo-bootsy-level').val('')
+    console.log('Hello????')
 
-      var todoHTML = createTodoHTML(jsonTodo)
-      $('#bootsy-todo').append(todoHTML)
+    $.post('/movies/api/movies', newMovie).done(function(jsonMovie){
+      //Clear the form
+      $('#movie-title').val('')
+      $('#movie-genre').val('')
+      $('#movie-provider').val('')
+      $('#movie-watched').val('')
+
+      var movieHTML = createMovieHTML(jsonMovie)
+      $('#watched').append(movieHTML)
     })
   })
 
-  function createTodoHTML(jsonTodo){
-    return $(`<li id="todo-${jsonTodo._id}"class="todo-item bootsy${jsonTodo.bootsyLevel}">${jsonTodo.task}
-    <input type="checkbox" name="todo[completed]" ${jsonTodo.completed ? "checked" : ""}/><span class="remove-item">X</span></li>"`)
+  function createMovieHTML(jsonMovie){
+    console.log(jsonMovie)
+    return $(`<li>${jsonMovie.title}</li><li>${jsonMovie.genre}<li>${jsonMovie.watched ? "checked" : ""}</li><li>${jsonMovie.provider}`)
   }
 
   function updateHandler(e){
@@ -49,15 +54,15 @@ $(document).ready(function(){
 
     $.ajax({
       type: "PATCH",
-      url: "/api/todos/" + encodeURIComponent(id),
+      url: "/api/movies/" + encodeURIComponent(id),
       data: {}
-    }).done(function(jsonTodo){
+    }).done(function(jsonMovie){
       html.remove()
-      var todoHTML = createTodoHTML(jsonTodo)
-      if(jsonTodo.completed) {
-        $('#personal-todo').append(todoHTML)
+      var movieHTML = createMovieHTML(jsonMovie)
+      if(jsonMovie.watched) {
+        $('#watched').append(movieHTML)
       } else {
-        $('#bootsy-todo').append(todoHTML)
+        $('#not-watched').append(movieHTML)
       }
     })
   }
@@ -68,14 +73,14 @@ $(document).ready(function(){
 
     $.ajax({
       type: "DELETE",
-      url: "/api/todos/" + encodeURIComponent(id),
+      url: "/api/movies/" + encodeURIComponent(id),
     }).done(function(data){
       html.remove()
       console.log(data.message)
     })
   }
-  $('#personal-todo').on('click', ':checkbox', updateHandler)
-  $('#bootsy-todo').on('click', ':checkbox', updateHandler)
-  $('#personal-todo').on('click', '.remove-item', deleteHandler)
-  $('#bootsy-todo').on('click', '.remove-item', deleteHandler)
+  $('#personal-movie').on('click', ':checkbox', updateHandler)
+  $('#bootsy-movie').on('click', ':checkbox', updateHandler)
+  $('#personal-movie').on('click', '.remove-item', deleteHandler)
+  $('#bootsy-movie').on('click', '.remove-item', deleteHandler)
 })
