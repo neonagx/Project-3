@@ -1,6 +1,12 @@
 console.log('app.js loaded');
 
 $(document).ready(function(){
+
+  function createMovieHTML(jsonMovie){
+    console.log(jsonMovie)
+    return $(`<li id="movie-${jsonMovie._id}">Title:${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br>Provider: ${jsonMovie.provider}<br>Watched?<input type="checkbox" ${jsonMovie.watched ? "checked" : ""}/><br><button class="remove-item">X</span></button></li>`)
+  }
+
   $.ajax({
     type: "GET",
     url: "/movies/api/movies"
@@ -40,14 +46,9 @@ $(document).ready(function(){
     })
   })
 
-  function createMovieHTML(jsonMovie){
-    console.log(jsonMovie)
-    return $(`<li>${jsonMovie.title}</li><li>${jsonMovie.genre}</li><li>${jsonMovie.provider}</li><input type="checkbox" ${jsonMovie.watched ? "checked" : ""}/><button class="remove-item">X</span></button>`)
-  }
-
   function updateHandler(e){
     var html = $(this).parent()
-    var id = html.attr('id').slice(5)
+    var id = html.attr('id').slice(6)
 
     $.ajax({
       type: "PATCH",
@@ -56,6 +57,7 @@ $(document).ready(function(){
     }).done(function(jsonMovie){
       html.remove()
       var movieHTML = createMovieHTML(jsonMovie)
+      console.log(jsonMovie)
       if(jsonMovie.watched) {
         $('#watched').append(movieHTML)
       } else {
@@ -66,7 +68,7 @@ $(document).ready(function(){
 
   function deleteHandler(e){
     var html = $(this).parent()
-    var id = html.attr('id').slice(5)
+    var id = html.attr('id').slice(6)
 
     $.ajax({
       type: "DELETE",
