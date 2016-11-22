@@ -3,25 +3,29 @@ var Movie = require('../models/movie')
 function index(req, res, next) {
 	Movie.find({}, function(err, movies){
 		if (err) next(err)
-
 		res.render('movies/index', {movies: movies})
 	})
 }
 
-function newMovie(req, res, next) {
-	console.log('inside new movie')
-  res.render('movies/new')
+function movieApi(req, res, next) {
+	Movie.find({}, function(err, movies) {
+		res.json(movies)
+	})
 }
+
+// function newMovie(req, res, next) {
+// 	console.log('inside new movie')
+//   res.render('movies/new')
+// }
 
 function create(req, res, next) {
   var movie = new Movie(req.body)
 
-  movie.save(function(err){
+  movie.save(function(err, savedMovie){
     if(err) {
       res.send(err)
     }
-    console.log("What a movie!")
-    res.redirect('/movies')
+		res.json(savedMovie)
   })
 };
 
@@ -71,8 +75,9 @@ function destroy(req, res) {
 }
 
 module.exports = {
+	movieApi: movieApi,
   index: index,
-  newMovie: newMovie,
+  // newMovie: newMovie,
   create: create,
   showMovie: show,
   updateMovie: update,
