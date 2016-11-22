@@ -28,9 +28,6 @@ $(document).ready(function(){
       provider: $('#movie-provider').val(),
       watched: $('#movie-watched').val()
     }
-
-    console.log('Hello????')
-
     $.post('/movies/api/movies', newMovie).done(function(jsonMovie){
       //Clear the form
       $('#movie-title').val('')

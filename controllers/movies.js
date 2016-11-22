@@ -3,7 +3,7 @@ var Movie = require('../models/movie')
 function index(req, res, next) {
 	Movie.find({}, function(err, movies){
 		if (err) next(err)
-		res.render('movies/index', {movers: movies})
+		res.render('movies/index', {movies: movies})
 	})
 }
 
@@ -25,7 +25,6 @@ function create(req, res, next) {
     if(err) {
       res.send(err)
     }
-    console.log("What a movie!")
 		res.json(savedMovie)
   })
 };
