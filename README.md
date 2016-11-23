@@ -3,15 +3,9 @@
 
 CREATED BY
 
-**Paul Baik**
-![Paul Photo](/assets/paul_photo.png =50x50)
-
+**Paul Baik**  
 **Darin Ma**  
-![](/assets/darin_photo.png = 50x100)
-
-**Gaye Lowenstein**
-![](/assets/gaye_photo.png =100x50)
-
+**Gaye Lowenstein**  
 </center>
 
 ###DESCRIPTION
@@ -34,11 +28,9 @@ We divided up the project so that each team member took the lead role as follows
 ###MVP
 * Have a working Google OAuth for users to log on and log off
 * Allow users to be able to create, edit, update and delete their movie list (full CRUD)
-* Allow users to check which movies they have watched
-
-###MVP with API
-* Allow users to search through movies
-* Allow users to see which providers are showing the movies
+* Allow users to sort movies by watched or not watched
+* Allow users to search through movies using 3rd Party API (Guidebox)
+* Allow users to see which providers are showing the movies (Guidebox)
 
 ###LINKS
 [Trello Board Link](https://trello.com/b/QMrl81kr/moviefindr "Trello Board")
