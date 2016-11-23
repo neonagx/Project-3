@@ -39,7 +39,6 @@ We divided up the project so that each team member took the lead role as follows
 ![Wireframes](assets/wireframe_original_home.png)
 ![Wireframes](assets/wireframe-home.png)
 ![Wireframes](assets/wireframes.png)
-![Wireframes](assets/wireframes.png)
 
 ![ERD](assets/erd.png)
 
