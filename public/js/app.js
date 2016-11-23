@@ -115,13 +115,13 @@ $(document).ready(function(){
         shortArr.forEach(function(movie){
           console.log(movie)
           $('#searchResults').append(`<li id='${movie.id}'>${movie.title}</li> <img class='clickPic' src="${movie.poster_240x342}">
-          <p> ${movie.rating} | ${ movie.release_date} </p> | <button class='addMovie'>Add Movie</button>`)
+          <p> ${movie.rating} | ${ movie.release_date} </p>`)
         })
       } else {
         results.forEach(function(movie){
           console.log(movie)
           $('#searchResults').append(`<li id='${movie.id}'><a>${movie.title}</a></li><img class='clickPic' src="${movie.poster_240x342}">
-          <p> ${movie.rating} | ${ movie.release_date} </p> | <button class='addMovie'>Add Movie</button>`)
+          <p> ${movie.rating} | ${ movie.release_date} </p>`)
         })
       }
     })
