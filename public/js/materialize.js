@@ -1,1 +1,4 @@
-$('.carousel').carousel()
+$(document).ready(function(){
+  $('.carousel').carousel()
+  $('.parallax').parallax()
+})
