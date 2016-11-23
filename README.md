@@ -55,5 +55,21 @@ We divided up the project so that each team member took the lead role as follows
 
 ###INSTALLATION INSTRUCTIONS
 
+* Clone this repo
+* Run npm install
+* Create .env file
+  * This is the format of your .env file
+
+  ```
+  LOCAL_DB=movieFindr  
+  GOOGLE_CLIENT_ID=<Your Key Here>  
+  GOOGLE_SECRET=<Your Key Here>  
+  GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
+  ```  
+* Obtain API keys from Google for OAuth
+* Save Google API keys in your .env file
+* Open another Terminal window and type in 'mongod'
+* Go back to original Terminal window and type in 'nodemon'
+* Navigate to local host:3000 in your browser
 
 ###STRETCH GOALS
