@@ -18,9 +18,7 @@ function create(req, res, next) {
   var movie = new Movie(req.body)
 
   movie.save(function(err, savedMovie){
-    if(err) {
-    res.send(err)
-    }
+    if(err) next(err)
 		res.json(savedMovie)
   })
 }
