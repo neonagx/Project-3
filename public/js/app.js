@@ -13,7 +13,7 @@ var purchaseSources
 $(document).ready(function(){
 
   function createMovieHTML(jsonMovie){
-    return $(`<a class='carousel-item' id="movie-${jsonMovie._id}">Title:${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br>Provider: ${jsonMovie.providers}<br><img src=${jsonMovie.imageSrc}><input type="checkbox" id=${jsonMovie._id} ${jsonMovie.watched ? "checked" : ""}/><label for=${jsonMovie._id}>Watched</label><br><button class="remove-item">X</span></button></a>`)
+    return $(`<a class='carousel-item' id="movie-${jsonMovie._id}">Title:${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br>Provider: ${jsonMovie.providers}<br><img src=${jsonMovie.imageSrc}><input type="checkbox" id=${jsonMovie._id} ${jsonMovie.watched ? "checked" : ""}/><label for=${jsonMovie._id}>Watched</label><br><button class="remove-item">X</span></button></a><br>`)
   }
 
   $.ajax({
