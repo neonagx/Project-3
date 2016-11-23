@@ -13,7 +13,7 @@ var purchaseSources
 $(document).ready(function(){
 
   function createMovieHTML(jsonMovie){
-    return $(`<a class='carousel-item' id="movie-${jsonMovie._id}">Title:${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br>Provider: ${jsonMovie.provider}<br><input type="checkbox" id=${jsonMovie._id} ${jsonMovie.watched ? "checked" : ""}/><label for=${jsonMovie._id}>Watched</label><br><button class="remove-item">X</span></button></a>`)
+    return $(`<a class='carousel-item' id="movie-${jsonMovie._id}">Title:${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br>Provider: ${jsonMovie.providers}<br><img src=${jsonMovie.imageSrc}><input type="checkbox" id=${jsonMovie._id} ${jsonMovie.watched ? "checked" : ""}/><label for=${jsonMovie._id}>Watched</label><br><button class="remove-item">X</span></button></a>`)
   }
 
   $.ajax({
@@ -142,7 +142,9 @@ $(document).ready(function(){
       data.purchase_web_sources
       var newMovie = {
         title: data.title,
-        genre: data.genres[0].title
+        genre: data.genres[0].title,
+        providers: [data.subscription_web_sources, data.purchase_web_sources],
+        imageSrc: data.poster_240x342
       }
       $.post('/movies/api/movies', newMovie).done(function(jsonMovie){
         var movieHTML = createMovieHTML(jsonMovie)
