@@ -63,33 +63,6 @@ function destroy(req, res, next) {
   })
 }
 
-function searchApi(req, res, next) {
-	var searchString = `https://api-public.guidebox.com/v1.43/US/T1srQMKdGpmfuqtp0ciZ7Wfqb82FXc/search/movie/title/${req.params.query}`
-	  request(searchString, function(err, response, body) {
-			var results = JSON.parse(body).results
-			if(results.length >= 5) {
-				shortArr = []
-				for(var i = 0; i < 5; i++) {
-					shortArr.push(results[i])
-				}
-				res.render("movies/search", {results: shortArr})
-			} else {
-				res.render("movies/search", {results: results})
-			}
-			// res.json(JSON.parse(body).results)
-	  })
-}
-
-// function movieInfo(req, res, next) {
-// 	var searchString = `https://api-public.guidebox.com/v1.43/US/T1srQMKdGpmfuqtp0ciZ7Wfqb82FXc/movie/${movie.id}`
-// 	  request(searchString, function(err, response, body) {
-// 			var results = JSON.parse(body).results
-// 			res.render("/show", {results: results})
-// 		})
-// 			// res.json(JSON.parse(body).results)
-// }
-
-
 
 module.exports = {
 	movieApi: movieApi,
@@ -97,7 +70,5 @@ module.exports = {
   create: create,
   showMovie: show,
   updateMovie: update,
-  destroyMovie: destroy,
-	searchApi: searchApi
-	// movieInfo: movieInfo
+  destroyMovie: destroy
 }
