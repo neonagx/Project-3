@@ -7,10 +7,11 @@
   <body>
     <h1>Movie Findr</h1>
     <h4>Welcome to Movie Findr</h4>
+
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <a href="" class="brand-logo left">Movie Findr</a>
+        <a href="" class="brand-logo left">Movie Findr</a>
           <ul class="right">
             <% if (user) { %>
               <li><a href="/logout">Logout</a></li>
@@ -18,9 +19,11 @@
               <h4><li><a href="/auth/google">Login with Google</a></li></h4>
             <% } %>
           </ul>
-        </div>
-      </nav>
-    </div>
-    <img src="http://www.focusandleap.com/wp-content/uploads/2015/09/watch-movies-online-at-home.jpg" alt="watch movies online image">
+          </div>
+        </nav>
+      </div>
+
+        <img class="responsive-img center-block" src="http://www.focusandleap.com/wp-content/uploads/2015/09/watch-movies-online-at-home.jpg" alt="watch movies online image">
+
   </body>
 </html>
