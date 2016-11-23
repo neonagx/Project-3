@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head')  %>
+  </head>
+  <body>
+    <ul>
+      <% results.forEach(function(movie){  %>
+        <li><a href="movies/:id"><%= movie.title %></a></li>
+        <p> <%= movie.rating %> | <%= movie.release_date %> </p>
+      <% }) %>
+    </ul>
+  </body>
+</html>
