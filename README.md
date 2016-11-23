@@ -49,6 +49,7 @@ We divided up the project so that each team member took the lead role as follows
 * __Express__ - server side framework to organize our app into MVC architecture
 * __GuideBox__ - 3rd party API
 * __JavaScript__ - object-oriented computer programming language
+* __Materialize__ - responsive CSS framework from Google used for styling
 * __MongoDB__ - platform to build our database
 * __Node.JS__ - platform to run our Javascript application
 * __OAuth__ - allows an end user's account info to be used by 3rd-party services without exposing the user's passwords
