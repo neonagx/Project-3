@@ -1,5 +1,6 @@
 var Movie = require('../models/movie')
 var authenticate = require('./authenticate')
+var request = require('request')
 
 function index(req, res, next) {
 	Movie.find({}, function(err, movies){
@@ -60,6 +61,7 @@ function destroy(req, res, next) {
     res.json({message: 'Movie is deleted'})
   })
 }
+
 
 module.exports = {
 	movieApi: movieApi,
