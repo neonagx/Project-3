@@ -4,15 +4,15 @@
 CREATED BY
 
 **Paul Baik**
-![GitHub Logo](/images/logo.png)
+![GitHub Logo](/assets/darin_photo.png)
 Format: ![Alt Text](url)
 
 **Darin Ma**  
-![GitHub Logo](/images/logo.png)
+![GitHub Logo](/assets/gaye_photo.png)
 Format: ![Alt Text](url)
 
 **Gaye Lowenstein**
-![GitHub Logo](/images/logo.png)
+![GitHub Logo](/assets/paul_photo.png)
 Format: ![Alt Text](url)
 </center>
 
