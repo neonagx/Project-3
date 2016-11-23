@@ -6,7 +6,7 @@
   <body>
     <ul>
       <% results.forEach(function(movie){  %>
-        <li><a href="movies/<%= movie.id %>"><%= movie.title %></a></li>
+        <li id= '<%= movie.id %>' class= 'movieList'><%= movie.title %></li>
         <p> <%= movie.rating %> | <%= movie.release_date %> </p>
       <% }) %>
     </ul>
