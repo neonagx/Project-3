@@ -85,6 +85,11 @@ $(document).ready(function(){
 
   $('#submitSearch').click(function(){
     var searchInput = $('#search').val()
-    window.location.replace(self.location.href+"/" + searchInput)
+    window.location.replace(self.location.href.slice(0,-1) +"/" + searchInput)
   })
+
+  // var ajax = $.get('https://api-public.guidebox.com/v1.43/US/T1srQMKdGpmfuqtp0ciZ7Wfqb82FXc/movies/<%= .id %>')
+  //   .done(function(data){
+  //     console.log(data)
+  //   })
 })
