@@ -82,4 +82,9 @@ $(document).ready(function(){
   $('#not-watched').on('click', ':checkbox', updateHandler)
   $('#watched').on('click', '.remove-item', deleteHandler)
   $('#not-watched').on('click', '.remove-item', deleteHandler)
+
+  $('#submitSearch').click(function(){
+    var searchInput = $('#search').val()
+    window.location.replace(self.location.href+"/" + searchInput)
+  })
 })

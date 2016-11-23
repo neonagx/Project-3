@@ -3,6 +3,8 @@ var moviesCtrl = require('../controllers/movies')
 
 router.route('/')
   .get(moviesCtrl.index)
+router.route('/:query')
+  .get(moviesCtrl.searchApi)
 router.route('/api/movies')
   .get(moviesCtrl.movieApi)
   .post(moviesCtrl.create)
