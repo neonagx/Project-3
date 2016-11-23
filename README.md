@@ -36,7 +36,12 @@ We divided up the project so that each team member took the lead role as follows
 ###LINKS
 [Trello Board Link](https://trello.com/b/QMrl81kr/moviefindr "Trello Board")
 
-_Wire Frames_
+![Wireframes](assets/wireframe_original_home.png)
+![Wireframes](assets/wireframe-home.png)
+![Wireframes](assets/wireframes.png)
+![Wireframes](assets/wireframes.png)
+
+![ERD](assets/erd.png)
 
 ###TECHNOLOGIES USED
 * __AJAX__ - client side script that communicates with a server/database (Express/MongoDB)
