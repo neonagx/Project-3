@@ -37,7 +37,7 @@ We divided up the project so that each team member took the lead role as follows
 [Trello Board Link](https://trello.com/b/QMrl81kr/moviefindr "Trello Board")
 
 
-![Wireframes](assets/wireframe.png)
+![Wireframes](assets/wireframes.png)
 
 
 ![ERD](assets/erd.png)
