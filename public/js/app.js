@@ -13,8 +13,7 @@ var purchaseSources
 $(document).ready(function(){
 
   function createMovieHTML(jsonMovie){
-    console.log(jsonMovie._id)
-    return $(`<li id="movie-${jsonMovie._id}">Title:${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br>Provider: ${jsonMovie.provider}<br><input type="checkbox" id=${jsonMovie._id} ${jsonMovie.watched ? "checked" : ""}/><label for=${jsonMovie._id}>Watched</label><br><button class="remove-item">X</span></button></li>`)
+    return $(`<a class='carousel-item' id="movie-${jsonMovie._id}">Title:${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br>Provider: ${jsonMovie.provider}<br><input type="checkbox" id=${jsonMovie._id} ${jsonMovie.watched ? "checked" : ""}/><label for=${jsonMovie._id}>Watched</label><br><button class="remove-item">X</span></button></a>`)
   }
 
   $.ajax({
@@ -22,7 +21,6 @@ $(document).ready(function(){
     url: "/movies/api/movies"
   }).done(function(jsonMovies){
     jsonMovies.forEach(function(jsonMovie){
-      console.log(jsonMovie)
       var movieHTML = createMovieHTML(jsonMovie)
 
       if(jsonMovie.watched) {
