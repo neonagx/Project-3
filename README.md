@@ -4,16 +4,14 @@
 CREATED BY
 
 **Paul Baik**
-![GitHub Logo](/assets/paul_photo.png =50x50)
-[Paul Baik photo](url)
+![Paul Photo](/assets/paul_photo.png =50x50)
 
 **Darin Ma**  
-![GitHub Logo](/assets/darin_photo.png = 50x100)
-Format: ![Darin Ma photo](url)
+![](/assets/darin_photo.png = 50x100)
 
 **Gaye Lowenstein**
-![GitHub Logo](/assets/gaye_photo.png =100x50)
-Format: ![Gaye Lowenstein photo](url)
+![](/assets/gaye_photo.png =100x50)
+
 </center>
 
 ###DESCRIPTION
