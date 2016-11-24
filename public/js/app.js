@@ -99,7 +99,7 @@ $(document).ready(function(){
     var searchString = $('#search').val()
     $.ajax({
       type: 'GET',
-      url: 'https://api-public.guidebox.com/v1.43/US/T1srQMKdGpmfuqtp0ciZ7Wfqb82FXc/search/movie/title/' + searchString
+      url: 'https://api-public.guidebox.com/v1.43/US/rKwGrhy6qjpZS1rJFNnX0vpdWMRHMJCo/search/movie/title/' + searchString
     }).done(function(data){
       console.log(data)
       var results = data.results
@@ -110,14 +110,14 @@ $(document).ready(function(){
         }
         shortArr.forEach(function(movie){
           console.log(movie)
-          $('#searchResults').append(`<li id='${movie.id}'>${movie.title}</li> <img class='clickPic' src="${movie.poster_240x342}">
-          <p> ${movie.rating} | ${ movie.release_date} </p>`)
+          $('#searchResults').append(`<div class='searchResponses'><li id='${movie.id}'><a>${movie.title}</a></li><img class='clickPic' src="${movie.poster_240x342}">
+          <p> ${movie.rating} | ${ movie.release_date} </p></div>`)
         })
       } else {
         results.forEach(function(movie){
           console.log(movie)
-          $('#searchResults').append(`<li id='${movie.id}'><a>${movie.title}</a></li><img class='clickPic' src="${movie.poster_240x342}">
-          <p> ${movie.rating} | ${ movie.release_date} </p>`)
+          $('#searchResults').append(`<div class='searchResponses'><li id='${movie.id}'><a>${movie.title}</a></li><img class='clickPic' src="${movie.poster_240x342}">
+          <p> ${movie.rating} | ${ movie.release_date} </p></div>`)
         })
       }
     })
@@ -128,7 +128,7 @@ $(document).ready(function(){
     console.log(id)
     $.ajax({
     type: 'GET',
-    url: 'https://api-public.guidebox.com/v1.43/US/T1srQMKdGpmfuqtp0ciZ7Wfqb82FXc/movies/' + id
+    url: 'https://api-public.guidebox.com/v1.43/US/rKwGrhy6qjpZS1rJFNnX0vpdWMRHMJCo/movies/' + id
     }).done(function(data){
       var title = data.title
       var image = data.poster_240x342
