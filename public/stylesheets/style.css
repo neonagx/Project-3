@@ -3,7 +3,10 @@
 body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
-	background-image: url('../images/film.jpg');
+	margin: auto;
+	background-image: url('../../images/film.jpg');
+	background-repeat: none;
+	background-size: contain;
 }
 
 h1, h3 {
@@ -12,6 +15,7 @@ h1, h3 {
 }
 
 h4 {
+	color: red;
 	text-align: center;
 }
 
@@ -19,6 +23,21 @@ img .clickPic {
 	margin-right: 0%;
 }
 
+
 li {
+	background-color: black;
+	color: red;
 	text-align: center;
+}
+
+.watched {
+	color: red;
+}
+
+.not-watched {
+	color: red;
+}
+
+label {
+	color: red;
 }

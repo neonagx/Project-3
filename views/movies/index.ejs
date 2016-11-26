@@ -8,29 +8,30 @@
     <body>
       <% if(user){ %>
       <nav>
-        <div class="nav-wrapper">
-          <a href="/logout" class="brand-logo">Logout</a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="#"></a></li>
-          </ul>
-        </div>
+        <a class="dropdown-button btn" href='#' data-activates='dropdown1'>Options</a>
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="/logout">Logout</a></li>
+          <li><a href="/movies">Home Page</a></li>
+        </ul>
       </nav>
-
       <h1>Movies Findr</h1>
       <h3>Movie List</h3>
               <!-- search feature for guidebox api -->
       <div class="section white">
         <div class="row container">
+          <a class='btn' onclick="Materialize.toast('Click on a Movie Poster to add to Not-Watched list and change back to watched list if you know you watched the movie', 4000)">How to add movie</a>
           <input id="search" placeholder="Search by title" type="text">
           <button id="submitSearch" class="btn btn-default">Search</button>
           <ul id= 'searchResults'>
           </ul>
         </div>
       </div>
+      <div class="film">
         <h4 class="custom-font checkbox">Watched</h4>
-        <ul id="watched"></ul>
-      <h4 class="custom-font checkbox">Not Watched</h4>
-      <ul id="not-watched"></ul>
+          <ul id="watched"></ul>
+        <h4 class="custom-font checkbox">Not Watched</h4>
+          <ul id="not-watched"></ul>
+      </div>
         <% } else { %>
           <div class="navbar-fixed">
             <nav>
