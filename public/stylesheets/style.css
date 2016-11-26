@@ -2,7 +2,7 @@
 
 body {
 	font-family: 'Raleway', sans-serif;
-	font-size: 16px;
+	font-size: 20px;
 	margin: auto;
 	background-image: url('../../images/film.jpg');
 	background-repeat: none;
@@ -19,8 +19,8 @@ h4 {
 	text-align: center;
 }
 
-img .clickPic {
-	margin-right: 0%;
+div {
+	background-image: url('../../images/maxresdefault.jpg');
 }
 
 
@@ -40,4 +40,12 @@ li {
 
 label {
 	color: red;
+}
+
+input {
+	color: white;
+}
+
+#search {
+	color: white;
 }
