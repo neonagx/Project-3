@@ -11,7 +11,8 @@ var purchaseSources
 $(document).ready(function(){
 
   function createMovieHTML(jsonMovie){
-    return $(`<li id="movie-${jsonMovie._id}">Title:${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br>Provider: ${jsonMovie.providers}<br><img src=${jsonMovie.imageSrc}><input type="checkbox" id=${jsonMovie._id} ${jsonMovie.watched ? "checked" : ""}/><label for=${jsonMovie._id}>Watched</label><br><button class="remove-item">X</span></button></li>`)
+    console.log(jsonMovie)
+    return $(`<li id="movie-${jsonMovie._id}">Title: ${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br><img src=${jsonMovie.imageSrc}><br><input style="color:red" type="checkbox" id=${jsonMovie._id} ${jsonMovie.watched ? "checked" : ""}/><label for=${jsonMovie._id}>Watched</label><br><button class="remove-item">Delete Movie from the list</span></button></li><br>`)
   }
 
   $.ajax({
@@ -111,7 +112,7 @@ $(document).ready(function(){
         shortArr.forEach(function(movie){
           console.log(movie)
           $('#searchResults').append(`<div class='searchResponses'><li id='${movie.id}'><a>${movie.title}</a></li><img class='clickPic' src="${movie.poster_240x342}">
-          <p> ${movie.rating} | ${ movie.release_date} </p></div>`)
+          <p>${movie.rating} | ${ movie.release_date}</p><br></div>`)
         })
       } else {
         results.forEach(function(movie){
@@ -150,8 +151,6 @@ $(document).ready(function(){
       })
     })
   })
-
-
 
 //end document ready
 })
