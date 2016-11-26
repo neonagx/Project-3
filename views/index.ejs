@@ -5,14 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div class="card-panel blue lighten-3">
-
     <h1>Movie Findr</h1>
     <h4>Welcome to Movie Findr</h4>
-
       <nav>
         <div class="nav-wrapper">
-        <a href="" class="brand-logo left">Movie Findr</a>
+        <a class="brand-logo left">Movie Findr</a>
           <ul class="brand-logo right">
             <% if (user) { %>
               <li><a href="/logout">Logout</a></li>
@@ -22,7 +19,11 @@
           </ul>
           </div>
         </nav>
-
+        <div class="nav-wrapper">
+          <% if(user){ %>
+            <a href="/movies"><button type="button" name="button">Lost? Click this button</button></a>
+          <% } %>
+        </div>
       <div class="card-panel red lighten-2">
         <img class="responsive-img center-block" src="http://www.focusandleap.com/wp-content/uploads/2015/09/watch-movies-online-at-home.jpg" alt="watch movies online image">
       </div>
