@@ -6,14 +6,13 @@
   </head>
   <body>
     <h1 style="color:black">Welcome to Movie Findr</h1>
-    
+
       <nav>
         <div class="nav-wrapper">
-        <a class="brand-logo left">Movie Findr</a>
-          <ul class="brand-logo right">
+          <ul class="brand-logo left">
             <% if (user) { %>
               <li><a href="/logout">Logout</a></li>
-              <li><a href="/movies"><button type="button" name="button">Lost? Click this button</button></a></li>
+              <li><a href="/movies">Lost? Click this button</a></li>
             <% } else { %>
               <li><a href="/auth/google">Login with Google</a></li>
             <% } %>
