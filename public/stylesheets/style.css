@@ -4,9 +4,9 @@ body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
 	margin: auto;
-	background-image: url('../../images/film.jpg');
+	background-image: url('../../images/new.jpg');
 	background-repeat: none;
-	background-size: contain;
+	background-size: cover;
 }
 
 h1, h3 {
@@ -20,7 +20,9 @@ h4 {
 }
 
 div {
-	background-image: url('../../images/maxresdefault.jpg');
+	background-image: url('../../images/film2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 
@@ -47,5 +49,9 @@ input {
 }
 
 #search {
+	color: white;
+}
+
+p {
 	color: white;
 }
