@@ -19,7 +19,6 @@ function create(req, res, next) {
   var movie = new Movie(req.body)
 
   movie.save(function(err, savedMovie){
-
     if(err) next(err)
 		res.json(savedMovie)
   })
@@ -39,10 +38,6 @@ function update(req, res, next) {
 
   Movie.findById(id, function(err, movie){
     if (err) next(err)
-    // if(req.body.title) movie.title = req.body.title
-    // if(req.body.genre) movie.genre = req.body.genre
-		// if(req.body.provider) movie.provider = req.body.provider
-		// if(req.body.watched) movie.watched = req.body.watched
 		movie.watched = !movie.watched
     movie.save(function(err, updatedMovie){
       if(err) next(err)
@@ -55,7 +50,7 @@ function update(req, res, next) {
 function destroy(req, res, next) {
   var id = req.params.id
 
-  Movie.remove({_id : id}, function(err){
+  Movie.remove({_id : id}, function(err) {
     if(err) next(err)
     console.log("Movie deleted")
     res.json({message: 'Movie is deleted'})

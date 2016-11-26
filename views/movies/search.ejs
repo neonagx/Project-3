@@ -3,13 +3,19 @@
   <head>
     <%- include('../partials/head')  %>
   </head>
+
+  <header>
+    <%- include('../partials/navbar') %>
+  </header>
+
   <body>
-    
+
     <ul>
       <% results.forEach(function(movie){  %>
         <li id= '<%= movie.id %>' class= 'movieList'><%= movie.title %></li>
         <p> <%= movie.rating %> | <%= movie.release_date %> </p>
       <% }) %>
     </ul>
+    
   </body>
 </html>

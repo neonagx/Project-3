@@ -75,6 +75,12 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 * Go back to original Terminal window and type in **nodemon**
 * Navigate to **localhost:3000** in your browser
 
+###KNOWN PROBLEMS
+
+* Not able to get watched and not-watched movies in separate columns
+* Not able to get provider to populate
+* Not able to get watched/not watched links to line up with title text
+
 ###STRETCH GOALS
 
 * Allow users to search for showtimes at nearby theaters
