@@ -2,26 +2,61 @@
 
 body {
 	font-family: 'Raleway', sans-serif;
-	font-size: 16px;
+	font-size: 20px;
+	margin: auto;
+	background-image: url('../../images/new.jpg');
+	background-repeat: none;
+	background-size: cover;
 }
+
 
 h1 {
 	font-weight: bold;
 	text-align: center;
+	color: red;
 }
 
-.clickPic {
+div {
+	background-image: url('../../images/film2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+li {
+	background-color: black;
+	color: red;
 	text-align: center;
 }
 
-h3,h4, h5 {
-	text-align: center;
+.watched {
+	color: red;
 }
 
-.nav-wrapper {
-	font-size: 1.5em;
-	font-weight: bold;
+.not-watched {
+	color: red;
+}
 
+label {
+	color: red;
+}
+
+input {
+	color: white;
+}
+
+#search {
+	color: white;
+}
+
+#main {
+	background-image: url('../../images/maxresdefault.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+p {
+	color: white;
 }
 img {
 	cursor: pointer;
