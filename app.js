@@ -7,7 +7,6 @@ var bodyParser = require('body-parser')
 var session = require('express-session')
 var passport = require('passport')
 
-
 //load the env vars
 require('dotenv').load()
 
@@ -22,8 +21,6 @@ require('./config/passport')
 // var index = require('./routes/index')
 var users = require('./routes/users')
 var movies = require('./routes/movies')
-var lists = require('./routes/lists')
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -46,7 +43,6 @@ app.use(passport.session())
 
 app.use('/', users)
 app.use('/movies', movies)
-app.use('/lists', lists)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

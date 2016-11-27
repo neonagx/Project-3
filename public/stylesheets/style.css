@@ -9,7 +9,6 @@ body {
 	background-size: cover;
 }
 
-
 h1 {
 	font-weight: bold;
 	text-align: center;
@@ -49,14 +48,10 @@ input {
 	color: white;
 }
 
-#main {
-	background-image: url('../../images/maxresdefault.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
 p {
 	color: white;
+	padding-left: 100px;
+	padding-right: 100px;
 }
 img {
 	cursor: pointer;
