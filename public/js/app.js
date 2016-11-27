@@ -90,11 +90,6 @@ $(document).ready(function(){
   $('#watched').on('click', '.remove-item', deleteHandler)
   $('#not-watched').on('click', '.remove-item', deleteHandler)
 
-  // $('#submitSearch').click(function(){
-  //   var searchInput = $('#search').val()
-  //   window.location.replace(self.location.href.slice(0,-1) +"/" + searchInput)
-  // })
-
   $('#submitSearch').click(function(){
     $('#searchResults').empty()
     var searchString = $('#search').val()
