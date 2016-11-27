@@ -4,12 +4,13 @@ body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
 	margin: auto;
+	background-color: black;
 }
 
 h1, h2, h3, h4 {
 	font-weight: bold;
 	text-align: center;
-	color: red;
+	color: white;
 }
 
 div {
@@ -21,20 +22,20 @@ div {
 
 li {
 	background-color: black;
-	color: red;
+	color: white;
 	text-align: center;
 }
 
 .watched {
-	color: red;
+	color: white;
 }
 
 .not-watched {
-	color: red;
+	color: white;
 }
 
 label {
-	color: red;
+	color: white;
 }
 
 input {
@@ -53,4 +54,5 @@ input {
 
 p {
 	color: white;
+	text-align: center;
 }

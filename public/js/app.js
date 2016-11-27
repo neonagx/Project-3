@@ -12,7 +12,7 @@ $(document).ready(function(){
 
   function createMovieHTML(jsonMovie){
     console.log(jsonMovie)
-    return $(`<li id="movie-${jsonMovie._id}">Title: ${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br><img src=${jsonMovie.imageSrc}><br><input style="color:red" type="checkbox" id=${jsonMovie._id} ${jsonMovie.watched ? "checked" : ""}/><label for=${jsonMovie._id}>Watched</label><br><button class="remove-item">Delete Movie from the list</span></button></li><br>`)
+    return $(`<li id="movie-${jsonMovie._id}">Title: ${jsonMovie.title}<br>Genre: ${jsonMovie.genre}<br><img src=${jsonMovie.imageSrc}><br><input style="color:red" type="checkbox" id=${jsonMovie._id} ${jsonMovie.watched ? "checked" : ""}/><label for=${jsonMovie._id}>Watched</label><br><button class="remove-item btn btn-default">Delete Movie from list</span></button></li><br>`)
   }
 
   $.ajax({
