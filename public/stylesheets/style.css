@@ -26,6 +26,7 @@ li {
 	background-color: black;
 	color: red;
 	text-align: center;
+	border: 2px solid blue;
 }
 
 .watched {
