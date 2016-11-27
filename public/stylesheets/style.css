@@ -12,7 +12,7 @@ body {
 h1, h2, h3, h4 {
 	font-weight: bold;
 	text-align: center;
-	color: red;
+	color: white;
 }
 
 div {
@@ -24,17 +24,21 @@ div {
 
 li {
 	background-color: black;
-	color: red;
+	color: white;
 	text-align: center;
-	border: 2px solid blue;
+	border: 2px solid white;
+}
+
+.remove-item {
+	color: red;
 }
 
 .watched {
-	color: red;
+	color: white;
 }
 
 .not-watched {
-	color: red;
+	color: white;
 }
 
 label {
@@ -57,4 +61,5 @@ input {
 
 p {
 	color: white;
+	text-align: center;
 }
