@@ -1,56 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%- include('../partials/head')%>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
 
-  <body>
-    <% if(user){ %>
-    <nav id="main">
-      <a class="dropdown-button btn" href='#' data-activates='dropdown1'>Options</a>
-      <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="/logout">Logout</a></li>
-        <li><a href="/">Home Page</a></li>
-      </ul>
-      <a class='btn' onclick="Materialize.toast('Click on a Movie Poster to add to Not-Watched list and change back to watched list if you know you watched the movie', 4000)">How to add movie</a>
-    </nav>
+    <head>
+      <%- include('../partials/head')  %>
+    </head>
 
-    <div class="section white">
-    <div class="row container">
-      <h1>Movie List</h1>
-
-      <input id="search" placeholder="Search by title" type="text">
-      <button id="submitSearch" class="btn btn-default">Search</button>
-      <ul id= 'searchResults' onclick="Materialize.toast('Movie Added To Not Watched list', 4000)">
-      </ul>
-
-    <div class="film">
-      <h4 class="custom-font checkbox">Watched List</h4>
-        <ul id="watched"></ul>
-      <h4 class="custom-font checkbox">Not Watched List</h4>
-        <ul id="not-watched"></ul>
-    </div>
-  </div>
-  </div>
-      <% } else { %>
-        <div class="navbar-fixed">
-          <nav>
-            <div class="nav-wrapper">
-              <a href="" class="brand-logo left">Movie Findr</a>
-              <ul class="right">
-                <% if (user) { %>
-                  <li><a href="/logout">Logout</a></li>
-                <% } else { %>
-                  <li><a href="/auth/google">Login with Google</a></li>
-                <% } %>
-              </ul>
-            </div>
-          </nav>
+    <body>
+      <% if(user){ %>
+      <nav id="main">
+        <a class="dropdown-button btn" href='#' data-activates='dropdown1'>Options</a>
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="/logout">Logout</a></li>
+          <li><a href="/">Home Page</a></li>
+        </ul>
+      </nav>
+      <h1>Movies Findr</h1>
+      <h3>Movie List</h3>
+      <div class="section white">
+        <div class="row container">
+          <a class='btn' onclick="Materialize.toast('Click on a Movie Poster to add to Not-Watched list and change back to watched list if you know you watched the movie', 4000)">How to add movie</a>
+          <input id="search" placeholder="Search by title" type="text">
+          <button id="submitSearch" class="btn btn-default">Search</button>
+          <ul id= 'searchResults' onclick="Materialize.toast('Movie Added To Not Watched list', 4000)">
+          </ul>
         </div>
-        <h4>Please login to enter MovieFindr!</h4>
-      <% } %>
-      <footer>Made by Gaye, Darin, Paul</footer>
-    <%- include('../partials/script')  %>
-  </body>
+      </div>
+      <div class="film">
+        <h4 class="custom-font checkbox">Watched List</h4>
+          <ul id="watched"></ul>
+        <h4 class="custom-font checkbox">Not Watched List</h4>
+          <ul id="not-watched"></ul>
+      </div>
+        <% } else { %>
+          <div class="navbar-fixed">
+            <nav>
+              <div class="nav-wrapper">
+                <a href="" class="brand-logo left">Movie Findr</a>
+                <ul class="right">
+                  <% if (user) { %>
+                    <li><a href="/logout">Logout</a></li>
+                  <% } else { %>
+                    <li><a href="/auth/google">Login with Google</a></li>
+                  <% } %>
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <h4>Please login to enter MovieFindr!</h4>
+        <% } %>
+        <%- include('../partials/footer') %>
+      <%- include('../partials/script')  %>
+    </body>
 </html>

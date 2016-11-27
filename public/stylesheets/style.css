@@ -4,12 +4,9 @@ body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
 	margin: auto;
-	background-image: url('../../images/new.jpg');
-	background-repeat: none;
-	background-size: cover;
 }
 
-h1 {
+h1, h2, h3, h4 {
 	font-weight: bold;
 	text-align: center;
 	color: red;
@@ -48,14 +45,12 @@ input {
 	color: white;
 }
 
+#main {
+	background-image: url('../../images/maxresdefault.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 p {
 	color: white;
-	padding-left: 100px;
-	padding-right: 100px;
 }
-img {
-	cursor: pointer;
-	display: block;
-  margin-left: auto;
-  margin-right: auto
-	}
