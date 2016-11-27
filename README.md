@@ -37,7 +37,6 @@ We divided up the project so that each team member took the lead role as follows
 
 [Pitch Deck](assets/pitch-deck.key)
 
-![Wireframes](assets/wireframe_original_home.png)
 ![Wireframes](assets/wireframe-home.png)
 ![Wireframes](assets/wireframes.png)
 
@@ -79,7 +78,6 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 * Not able to get watched and not-watched movies in separate columns
 * Not able to get provider to populate
-* Not able to get watched/not watched links to line up with title text
 
 ###STRETCH GOALS
 
