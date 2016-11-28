@@ -4,7 +4,7 @@ body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
 	margin: auto;
-	background-image: url('../../images/new.jpg');
+	background-image: url('../../images/cinema.jpg');
 	background-repeat: none;
 	background-size: cover;
 }
@@ -26,6 +26,7 @@ li {
 	background-color: black;
 	color: red;
 	text-align: center;
+	border: 2px solid white;
 }
 
 .searchResponses {
@@ -60,4 +61,11 @@ input {
 
 p {
 	color: white;
+	text-align: center;
+}
+
+p.overview {
+	text-align: right;
+	float: right;
+	max-width: 570px;	
 }
