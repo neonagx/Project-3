@@ -10,11 +10,17 @@ body {
 	background-size: cover;
 }
 
-h1, h2, h3, h4 {
+h1, h2 {
 	font-weight: bold;
 	text-align: center;
-	color: white;
+	color: teal;
 }
+
+ h3, h4, h5 {
+	font-weight: bold;
+ 	text-align: center;
+ 	color: white;
+ }
 
 div {
 	background-image: url('../../images/film2.jpg');
@@ -30,13 +36,8 @@ li {
 	border: 2px solid white;
 }
 
-<<<<<<< HEAD
-.watched {
-	color: white;
-=======
 .remove-item {
 	color: red;
->>>>>>> 80da90414cdcd362c0a408f616b13822174b5c31
 }
 
 .watched {
@@ -57,6 +58,7 @@ input {
 
 #search {
 	color: white;
+	font-size: 1em;
 }
 
 #main {
