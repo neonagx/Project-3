@@ -145,7 +145,7 @@ $(document).ready(function(){
       $(`#${data.id}div`).append(`<p class='overview'>${data.overview}</p><p class='overview'>Rated: ${data.rating} | Released Date: ${data.release_date}</p><button class='addMovie' onclick="Materialize.toast('Added Movie to Not Watched List', 4000)">Add Movie</button>`)
       var subSources = data.subscription_web_sources
       subSources.forEach(function(source){
-        $(`#${data.id}div`).append(`<br class='sources'><a class='sources' href='${source.link}'>${source.display_name}</a>`)
+        $(`#${data.id}div`).append(`<br class='sources'><a class='sources' href='${source.link}' target='_blank'>${source.display_name}</a>`)
       })
       var purchaseSources = data.purchase_web_sources
       purchaseSources.forEach(function(source){
