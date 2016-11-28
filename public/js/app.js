@@ -7,6 +7,9 @@ var genre
 var freeSources
 var subSources
 var purchaseSources
+var overview
+var MovieId
+var newMovie
 
 $(document).ready(function(){
 
@@ -90,11 +93,6 @@ $(document).ready(function(){
   $('#watched').on('click', '.remove-item', deleteHandler)
   $('#not-watched').on('click', '.remove-item', deleteHandler)
 
-  // $('#submitSearch').click(function(){
-  //   var searchInput = $('#search').val()
-  //   window.location.replace(self.location.href.slice(0,-1) +"/" + searchInput)
-  // })
-
   $('#submitSearch').click(function(){
     $('#searchResults').empty()
     var searchString = $('#search').val()
@@ -111,18 +109,20 @@ $(document).ready(function(){
         }
         shortArr.forEach(function(movie){
           console.log(movie)
-          $('#searchResults').append(`<div class='searchResponses'><li id='${movie.id}'><a>${movie.title}</a></li><img class='clickPic' src="${movie.poster_240x342}">
-          <p>${movie.rating} | ${ movie.release_date}</p><br></div>`)
+          $('#searchResults').append(`<div class='searchResponses' id='${movie.id}div'><li id='${movie.id}'><h6>${movie.title}</h6></li><img class='clickPic' src="${movie.poster_240x342}">`)
         })
       } else {
         results.forEach(function(movie){
           console.log(movie)
-          $('#searchResults').append(`<div class='searchResponses'><li id='${movie.id}'><a>${movie.title}</a></li><img class='clickPic' src="${movie.poster_240x342}">
-          <p> ${movie.rating} | ${ movie.release_date} </p></div>`)
+          $('#searchResults').append(`<div class='searchResponses' id='${movie.id}div'><li id='${movie.id}'><h3>${movie.title}</h6></li><img class='clickPic' src="${movie.poster_240x342}">`)
         })
       }
     })
   })
+//old code from above
+//   $('#searchResults').append(`<div class='searchResponses'><li id='${movie.id}'><a>${movie.title}</a></li><img class='clickPic' src="${movie.poster_240x342}">
+//   <p> ${movie.rating} | ${ movie.release_date} </p></div>`)
+// })
 
   $('#searchResults').on('click', '.clickPic', function(){
     var id = $(this).prev().attr('id')
@@ -131,6 +131,8 @@ $(document).ready(function(){
     type: 'GET',
     url: 'https://api-public.guidebox.com/v1.43/US/rKwGrhy6qjpZS1rJFNnX0vpdWMRHMJCo/movies/' + id
     }).done(function(data){
+      overview = data.overview
+      movieId = data.id
       var title = data.title
       var image = data.poster_240x342
       var genre = data.genres[0].title
@@ -139,18 +141,57 @@ $(document).ready(function(){
       data.subscription_web_sources
       var purchaseSources =
       data.purchase_web_sources
-      var newMovie = {
-        title: data.title,
-        genre: data.genres[0].title,
-        providers: [data.subscription_web_sources, data.purchase_web_sources],
-        imageSrc: data.poster_240x342
-      }
-      $.post('/movies/api/movies', newMovie).done(function(jsonMovie){
-        var movieHTML = createMovieHTML(jsonMovie)
-        $('#not-watched').append(movieHTML)
-      })
+        newMovie = {
+          title: data.title,
+          genre: data.genres[0].title,
+          providers: [data.subscription_web_sources, data.purchase_web_sources],
+          imageSrc: data.poster_240x342
+        }
+      $('.overview').remove()
+      $('.addMovie').remove()
+      $(`#${data.id}div`).append(`<p class='overview'>${data.overview}</p> | <button class='addMovie'>Add Movie</button>`)
     })
   })
+
+  //adds movie to api/movies
+  $('#searchResults').on('click', '.addMovie', function(){
+    console.log(overview)
+    console.log(movieId)
+    console.log("You clicked on add movie!!!!")
+    $.post('/movies/api/movies', newMovie).done(function(jsonMovie){
+      var movieHTML = createMovieHTML(jsonMovie)
+      $('#not-watched').append(movieHTML)
+      })
+  })
+
+  //old code
+  // $('#searchResults').on('click', '.addMovie', function(){
+  //   var id = $(this).prev().attr('id')
+  //   console.log(id)
+  //   $.ajax({
+  //   type: 'GET',
+  //   url: 'https://api-public.guidebox.com/v1.43/US/rKwGrhy6qjpZS1rJFNnX0vpdWMRHMJCo/movies/' + id
+  //   }).done(function(data){
+  //     var title = data.title
+  //     var image = data.poster_240x342
+  //     var genre = data.genres[0].title
+  //     var freeSources = data.free_web_sources
+  //     var subSources =
+  //     data.subscription_web_sources
+  //     var purchaseSources =
+  //     data.purchase_web_sources
+  //     var newMovie = {
+  //       title: data.title,
+  //       genre: data.genres[0].title,
+  //       providers: [data.subscription_web_sources, data.purchase_web_sources],
+  //       imageSrc: data.poster_240x342
+  //     }
+  //     $.post('/movies/api/movies', newMovie).done(function(jsonMovie){
+  //       var movieHTML = createMovieHTML(jsonMovie)
+  //       $('#not-watched').append(movieHTML)
+  //     })
+  //   })
+  // })
 
 //end document ready
 })
