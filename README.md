@@ -77,7 +77,6 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 ###KNOWN PROBLEMS
 
 * Not able to get watched and not-watched movies in separate columns
-* Not able to get provider to populate
 
 ###STRETCH GOALS
 
