@@ -35,7 +35,8 @@ We divided up the project so that each team member took the lead role as follows
 ###LINKS
 [Trello Board Link](https://trello.com/b/QMrl81kr/moviefindr "Trello Board")
 
-![Wireframes](assets/wireframe_original_home.png)
+[Pitch Deck](assets/pitch-deck.key)
+
 ![Wireframes](assets/wireframe-home.png)
 ![Wireframes](assets/wireframes.png)
 
@@ -72,6 +73,12 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 * Open another Terminal window and type in **mongod**
 * Go back to original Terminal window and type in **nodemon**
 * Navigate to **localhost:3000** in your browser
+
+###UNSOLVED PROBLEMS
+
+* Do not have full CRUD for users
+* Saved lists on Heroku are being populated on all users lists 
+* Not able to get watched and not-watched movies in separate columns in a list format
 
 ###STRETCH GOALS
 

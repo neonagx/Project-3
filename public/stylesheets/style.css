@@ -9,11 +9,17 @@ body {
 	background-size: cover;
 }
 
-h1, h2, h3, h4 {
+h1, h2 {
 	font-weight: bold;
 	text-align: center;
 	color: red;
 }
+
+ h3, h4, h5 {
+	font-weight: bold;
+ 	text-align: center;
+ 	color: white;
+ }
 
 div {
 	background-image: url('../../images/film2.jpg');
@@ -42,7 +48,7 @@ li {
 }
 
 label {
-	color: red;
+	color: white;
 }
 
 input {
@@ -51,6 +57,7 @@ input {
 
 #search {
 	color: white;
+	font-size: 1em;
 }
 
 #main {
