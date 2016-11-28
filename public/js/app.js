@@ -119,10 +119,6 @@ $(document).ready(function(){
       }
     })
   })
-//old code from above
-//   $('#searchResults').append(`<div class='searchResponses'><li id='${movie.id}'><a>${movie.title}</a></li><img class='clickPic' src="${movie.poster_240x342}">
-//   <p> ${movie.rating} | ${ movie.release_date} </p></div>`)
-// })
 
   $('#searchResults').on('click', '.clickPic', function(){
     var id = $(this).prev().attr('id')
@@ -169,35 +165,6 @@ $(document).ready(function(){
       $('#not-watched').append(movieHTML)
       })
   })
-
-  //old code
-  // $('#searchResults').on('click', '.addMovie', function(){
-  //   var id = $(this).prev().attr('id')
-  //   console.log(id)
-  //   $.ajax({
-  //   type: 'GET',
-  //   url: 'https://api-public.guidebox.com/v1.43/US/rKwGrhy6qjpZS1rJFNnX0vpdWMRHMJCo/movies/' + id
-  //   }).done(function(data){
-  //     var title = data.title
-  //     var image = data.poster_240x342
-  //     var genre = data.genres[0].title
-  //     var freeSources = data.free_web_sources
-  //     var subSources =
-  //     data.subscription_web_sources
-  //     var purchaseSources =
-  //     data.purchase_web_sources
-  //     var newMovie = {
-  //       title: data.title,
-  //       genre: data.genres[0].title,
-  //       providers: [data.subscription_web_sources, data.purchase_web_sources],
-  //       imageSrc: data.poster_240x342
-  //     }
-  //     $.post('/movies/api/movies', newMovie).done(function(jsonMovie){
-  //       var movieHTML = createMovieHTML(jsonMovie)
-  //       $('#not-watched').append(movieHTML)
-  //     })
-  //   })
-  // })
 
 //end document ready
 })
