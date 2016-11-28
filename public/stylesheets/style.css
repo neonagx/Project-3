@@ -4,7 +4,8 @@ body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
 	margin: auto;
-	background-image: url('../../images/cinema.jpg');
+	/*background-image: url('../../images/cinema.jpg');*/
+	background-color: black;
 	background-repeat: none;
 	background-size: cover;
 }
