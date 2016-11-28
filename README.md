@@ -74,9 +74,10 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 * Go back to original Terminal window and type in **nodemon**
 * Navigate to **localhost:3000** in your browser
 
-###KNOWN PROBLEMS
+###UNSOLVED PROBLEMS
 
-* Not able to get watched and not-watched movies in separate columns
+* Do not have full CRUD for users
+* Not able to get watched and not-watched movies in separate columns in a list format
 
 ###STRETCH GOALS
 
