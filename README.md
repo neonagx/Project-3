@@ -77,6 +77,7 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 ###UNSOLVED PROBLEMS
 
 * Do not have full CRUD for users
+* Saved lists on Heroku are being populated on all users lists 
 * Not able to get watched and not-watched movies in separate columns in a list format
 
 ###STRETCH GOALS

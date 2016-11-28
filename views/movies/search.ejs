@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%- include('../partials/head')  %>
+    <%- include('../partials/head') %>
   </head>
+  
   <body>
-
     <ul>
-      <% results.forEach(function(movie){  %>
+      <% results.forEach(function(movie){ %>
         <li id= '<%= movie.id %>' class= 'movieList'><%= movie.title %></li>
         <p> <%= movie.rating %> | <%= movie.release_date %> </p>
       <% }) %>
