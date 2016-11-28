@@ -29,6 +29,7 @@
         <ul id="not-watched"></ul>
     </div>
       <% } else { %>
+      <section style="background-color: black">
         <div class="navbar-fixed">
           <nav>
             <div class="nav-wrapper">
@@ -44,8 +45,12 @@
           </nav>
         </div>
         <h4>Please login to enter MovieFindr!</h4>
+          <img class="responsive-img center-block" src="../images/watch.jpg" alt="watch movies online image">
+          <p>Search multiple databases. Find where a movie is being streamed online.
+          </p>
+        <footer>Made by Gaye, Darin, Paul</footer>
+      </section>
       <% } %>
-      <footer>Made by Gaye, Darin, Paul</footer>
     <%- include('../partials/script')  %>
   </body>
 </html>
