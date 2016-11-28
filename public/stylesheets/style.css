@@ -4,7 +4,9 @@ body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
 	margin: auto;
-	background-color: black;
+	background-image: url('../../images/cinema.jpg');
+	background-repeat: none;
+	background-size: cover;
 }
 
 h1, h2, h3, h4 {
@@ -24,6 +26,16 @@ li {
 	background-color: black;
 	color: white;
 	text-align: center;
+	border: 2px solid white;
+}
+
+<<<<<<< HEAD
+.watched {
+	color: white;
+=======
+.remove-item {
+	color: red;
+>>>>>>> 80da90414cdcd362c0a408f616b13822174b5c31
 }
 
 .watched {

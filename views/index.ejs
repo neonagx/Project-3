@@ -6,14 +6,18 @@
   </head>
 
   <body>
+    <h1>Welcome to Movie Findr</h1>
+
+  <body>
       <nav>
         <div class="nav-wrapper">
           <ul class="brand-logo left">
             <% if (user) { %>
-              <li><a href="/logout">Logout</a></li>
-              <li><a href="/movies">Back to Your Search</a></li>
+              <li><a class="waves-effect waves-light btn" href="/logout">Logout</a></li>
+              <li><a class="waves-effect waves-light btn" href="/movies">Lost? Click this button</a></li>
+
             <% } else { %>
-              <li><a href="/auth/google">Login with Google</a></li>
+              <li><a class="waves-effect waves-light btn" href="/auth/google">Login with Google</a></li>
             <% } %>
           </ul>
         </div>
@@ -27,7 +31,10 @@
       </div>
 
       <div class="card-panel red lighten-2">
-        <img class="responsive-img center-block" src="http://www.focusandleap.com/wp-content/uploads/2015/09/watch-movies-online-at-home.jpg" alt="watch movies online image">
+        <img class="responsive-img center-block" src="../images/watch.jpg" alt="watch movies online image">
+        <p>Search multiple databases. Find where a movie is being streamed online.
+        </p>
+
       </div>
       <div id="footer">Made by Gaye, Darin, Paul</div>
   </body>
