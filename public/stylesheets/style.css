@@ -28,6 +28,11 @@ li {
 	text-align: center;
 }
 
+/*.searchResponses {
+	display: inline;
+	float: left;
+}*/
+
 .watched {
 	color: red;
 }
