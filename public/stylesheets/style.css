@@ -28,6 +28,10 @@ li {
 	text-align: center;
 }
 
+.searchResponses {
+	height: auto;
+}
+
 .watched {
 	color: red;
 }
