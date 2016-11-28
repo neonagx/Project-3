@@ -67,5 +67,5 @@ p {
 p.overview {
 	text-align: right;
 	float: right;
-	width: 570px;
+	max-width: 570px;	
 }
