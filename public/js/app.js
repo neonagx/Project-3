@@ -131,25 +131,31 @@ $(document).ready(function(){
     type: 'GET',
     url: 'https://api-public.guidebox.com/v1.43/US/rKwGrhy6qjpZS1rJFNnX0vpdWMRHMJCo/movies/' + id
     }).done(function(data){
+
       overview = data.overview
       movieId = data.id
+      newMovie = {
+        title: data.title,
+        genre: data.genres[0].title,
+        imageSrc: data.poster_240x342
+        }
+
       var title = data.title
       var image = data.poster_240x342
       var genre = data.genres[0].title
-      var freeSources = data.free_web_sources
-      var subSources =
-      data.subscription_web_sources
-      var purchaseSources =
-      data.purchase_web_sources
-        newMovie = {
-          title: data.title,
-          genre: data.genres[0].title,
-          providers: [data.subscription_web_sources, data.purchase_web_sources],
-          imageSrc: data.poster_240x342
-        }
       $('.overview').remove()
       $('.addMovie').remove()
-      $(`#${data.id}div`).append(`<p class='overview'>${data.overview}</p> | <button class='addMovie'>Add Movie</button>`)
+      $('.sources').remove()
+      $(`#${data.id}div`).append(`<p class='overview'>${data.overview}</p><p class='overview'>${data.rating} | ${data.release_date}</p><button class='addMovie'>Add Movie</button>`)
+      var subSources = data.subscription_web_sources
+      subSources.forEach(function(source){
+        $(`#${data.id}div`).append(`<br class='sources'><a class='sources' href='${source.link}'>${source.display_name}</a>`)
+      })
+      var purchaseSources = data.purchase_web_sources
+      purchaseSources.forEach(function(source){
+          $(`#${data.id}div`).append(`<br class='sources'><a class='sources' href='${source.link}'>${source.display_name}</a>`)
+      })
+      console.log(purchaseSources)
     })
   })
 
