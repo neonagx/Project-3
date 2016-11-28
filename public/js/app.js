@@ -136,11 +136,11 @@ $(document).ready(function(){
       var title = data.title
       var image = data.poster_240x342
       var genre = data.genres[0].title
-      var freeSources = data.free_web_sources
-      var subSources =
-      data.subscription_web_sources
-      var purchaseSources =
-      data.purchase_web_sources
+      // var freeSources = data.free_web_sources
+      // var subSources =
+      // data.subscription_web_sources
+      // var purchaseSources =
+      // data.purchase_web_sources
         newMovie = {
           title: data.title,
           genre: data.genres[0].title,
@@ -149,8 +149,20 @@ $(document).ready(function(){
         }
       $('.overview').remove()
       $('.addMovie').remove()
+      $('.sources').remove()
       $(`#${data.id}div`).append(`<p class='overview'>${data.overview}</p> | <button class='addMovie'>Add Movie</button>`)
+      var subSources = data.subscription_web_sources
+      subSources.forEach(function(source){
+        $(`#${data.id}div`).append(`<br><a class='sources' href='${source.link}'>${source.display_name}</a>`)
+      })
+      var purchaseSources = data.purchase_web_sources
+      purchaseSources.forEach(function(source){
+          $(`#${data.id}div`).append(`<br><a class='sources' href='${source.link}'>${source.display_name}</a>`)
+      })
     })
+
+
+    console.log(subSources)
   })
 
   //adds movie to api/movies

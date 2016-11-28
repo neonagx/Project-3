@@ -3,7 +3,6 @@ var mongoose = require('mongoose')
 var MovieSchema = new mongoose.Schema({
   title: String,
   genre: String,
-  providers: Array,
   imageSrc: String,
   watched: Boolean
 })

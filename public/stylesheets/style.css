@@ -4,7 +4,7 @@ body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 20px;
 	margin: auto;
-	background-image: url('../../images/cinema.jpg');
+	background-image: url('../../images/new.jpg');
 	background-repeat: none;
 	background-size: cover;
 }
@@ -12,7 +12,7 @@ body {
 h1, h2, h3, h4 {
 	font-weight: bold;
 	text-align: center;
-	color: white;
+	color: red;
 }
 
 div {
@@ -24,20 +24,16 @@ div {
 
 li {
 	background-color: black;
-	color: white;
-	text-align: center;
-	border: 2px solid white;
-}
-
 	color: red;
+	text-align: center;
 }
 
 .watched {
-	color: white;
+	color: red;
 }
 
 .not-watched {
-	color: white;
+	color: red;
 }
 
 label {
@@ -60,5 +56,4 @@ input {
 
 p {
 	color: white;
-	text-align: center;
 }
