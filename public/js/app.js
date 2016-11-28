@@ -142,7 +142,7 @@ $(document).ready(function(){
       $('.overview').remove()
       $('.addMovie').remove()
       $('.sources').remove()
-      $(`#${data.id}div`).append(`<p class='overview'>${data.overview}</p><p class='overview'>Rated: ${data.rating} | Released Date: ${data.release_date}</p><button class='addMovie' onclick="Materialize.toast('Added Movie to Not Watched List', 4000)">Add Movie</button>`)
+      $(`#${data.id}div`).append(`<textarea rows='4' column='25' class='overview'>${data.overview}</textarea><p class='overview'>Rated: ${data.rating} | Released Date: ${data.release_date}</p><button class='addMovie' onclick="Materialize.toast('Added Movie to Not Watched List', 4000)">Add Movie</button>`)
       var subSources = data.subscription_web_sources
       subSources.forEach(function(source){
         $(`#${data.id}div`).append(`<br class='sources'><a class='sources' href='${source.link}' target='_blank'>${source.display_name}</a>`)

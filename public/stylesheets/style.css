@@ -71,8 +71,8 @@ p {
 	text-align: center;
 }
 
-p.overview {
-	text-align: right;
-	float: right;
-	max-width: 570px;
+textarea.overview {
+	color: white;
+	text-align: center;
+	height: 100%;
 }
