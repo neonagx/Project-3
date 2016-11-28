@@ -154,7 +154,7 @@ $(document).ready(function(){
   })
 
   //adds movie to api/movies
-  $('#searchResults').on('click', '.addMovie', function(){}
+  $('#searchResults').on('click', '.addMovie', function(){
     console.log(overview)
     console.log(movieId)
     console.log("You clicked on add movie!!!!")
