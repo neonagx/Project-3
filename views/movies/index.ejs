@@ -16,7 +16,6 @@
       </nav>
       <h1>Movies Findr</h1>
       <h3>Movie List</h3>
-      <div class="section white">
         <div class="row container">
           <a class='btn' onclick="Materialize.toast('Click on a Movie Poster to add to Not-Watched list and change back to watched list if you know you watched the movie', 4000)">How to add movie</a>
           <input id="search" placeholder="Search by title" type="text">
@@ -24,11 +23,10 @@
           <ul id= 'searchResults' onclick="Materialize.toast('Movie Added To Not Watched list', 4000)">
           </ul>
         </div>
-      </div>
       <div class="film">
-        <h4 class="custom-font checkbox">Watched List</h2>
+        <h2 class="custom-font checkbox" style="border: 2px solid white">Watched List</h2>
           <ul id="watched"></ul>
-        <h2 class="custom-font checkbox">Not Watched List</h4>
+        <h2 class="custom-font checkbox" style="border: 2px solid white">Not Watched List</h2>
           <ul id="not-watched"></ul>
       </div>
         <% } else { %>
