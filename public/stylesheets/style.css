@@ -18,7 +18,7 @@ h1, h2 {
  h3, h4, h5 {
 	font-weight: bold;
  	text-align: center;
- 	color: white;
+ 	color: red;
  }
 
 div {
@@ -74,5 +74,5 @@ p {
 p.overview {
 	text-align: right;
 	float: right;
-	max-width: 570px;	
+	max-width: 570px;
 }
