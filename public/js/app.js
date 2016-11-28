@@ -149,7 +149,7 @@ $(document).ready(function(){
       })
       var purchaseSources = data.purchase_web_sources
       purchaseSources.forEach(function(source){
-          $(`#${data.id}div`).append(`<br class='sources'><a class='sources' href='${source.link}'>${source.display_name}</a>`)
+          $(`#${data.id}div`).append(`<br class='sources'><a class='sources' href='${source.link}' target='_blank'>${source.display_name}</a>`)
       })
       console.log(purchaseSources)
     })
